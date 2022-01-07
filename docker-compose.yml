@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  web:
+    build:
+      context: .
+      args:
+        ENABLED_MODULES: nginx-sticky-module-ng-1.2.6
+    image: nginx-stick:1.21
+    ports:
+      - "80:80"
