@@ -8,3 +8,4 @@ services:
     image: nginx-stick:1.21
     ports:
       - "80:80"
+      - "443:443"
