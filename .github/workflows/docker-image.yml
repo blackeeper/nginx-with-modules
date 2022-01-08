@@ -9,17 +9,17 @@ on:
 jobs:
 
   build:
-
     runs-on: ubuntu-18.04
-
     steps:
-    - uses: actions/checkout@v2
-
-    - uses: uraimo/run-on-arch-action@v2
-      name: Build the Docker image
-      with:
-          arch: aarch64
-          distro: ubuntu18.04
-          githubToken: ${{ github.token }}
-      run: docker build . --file Dockerfile --build-arg ENABLED_MODULES="nginx-sticky-module-ng-1.2.6" --tag nginx-sticky:$(date +%s)
+      - uses: actions/checkout@v2
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - uses: uraimo/run-on-arch-action@v2
+        name: Build the Docker image
+        with:
+            arch: aarch64
+            distro: ubuntu18.04
+            githubToken: ${{ github.token }}
+        run: docker build . --file Dockerfile --build-arg ENABLED_MODULES="nginx-sticky-module-ng-1.2.6" --tag nginx-sticky:$(date +%s)
 
