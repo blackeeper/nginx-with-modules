@@ -31,4 +31,4 @@ jobs:
         with:
           context: ./nginx/
           push: true
-          tags: nginx-stick:v1
+          tags: blackeeper/nginx-stick:v1
