@@ -10,7 +10,7 @@ RUN set -ex \
 
 COPY ./ /modules/
 
-RUN /bin/bash set -ex \
+RUN set -ex \
     && apt update \
     && apt install -y --no-install-suggests --no-install-recommends \
                 patch make wget mercurial devscripts debhelper dpkg-dev \
